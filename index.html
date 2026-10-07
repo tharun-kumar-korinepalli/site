@@ -2,334 +2,1274 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tharun Kumar Korine Palli — AI Researcher</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tharun Kumar Korine Palli · AI Researcher</title>
+    <meta name="description" content="Tharun Kumar Korine Palli, AI Researcher at TTZ Kitzingen (THWS). Working on large language models, RAG systems, computer vision and edge AI.">
+    <meta name="author" content="Tharun Kumar Korine Palli">
+    <meta name="theme-color" content="#08090b">
+    <meta name="color-scheme" content="dark">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Tharun Kumar Korine Palli · AI Researcher">
+    <meta property="og:description" content="AI Researcher exploring the intersection of large language models, computer vision, and robotics.">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2308090b'/%3E%3Ctext x='8' y='22' font-family='Arial,sans-serif' font-size='18' font-weight='700' fill='%23f4f5f7'%3Et%3C/text%3E%3Ccircle cx='22' cy='20' r='2.6' fill='%234ade80'/%3E%3C/svg%3E">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script>document.documentElement.classList.add('js');</script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Tharun Kumar Korine Palli",
+        "jobTitle": "AI Researcher",
+        "email": "mailto:korinetharunkumarpalli@gmail.com",
+        "worksFor": { "@type": "Organization", "name": "TTZ Kitzingen", "url": "https://ttz-kt.thws.de/" },
+        "alumniOf": [
+            { "@type": "CollegeOrUniversity", "name": "Technische Hochschule Würzburg-Schweinfurt" },
+            { "@type": "CollegeOrUniversity", "name": "G. Pulla Reddy Engineering College" }
+        ],
+        "sameAs": [
+            "https://www.linkedin.com/in/tharun-kumar-korine-palli/",
+            "https://github.com/tharun-kumar-korinepalli",
+            "https://medium.com/@korinetharunkumarpalli"
+        ]
+    }
+    </script>
     <style>
+        /* ---------- Tokens ---------- */
         :root {
-            --bg: #0c0c0c;
-            --bg-elevated: #141414;
-            --bg-card: #1a1a1a;
+            --bg: #08090b;
+            --surface: #0f1114;
+            --text: #f4f5f7;
+            --text-2: #a7acb6;
+            --text-3: #80868f;
             --accent: #4ade80;
-            --accent-soft: rgba(74, 222, 128, 0.15);
-            --accent-glow: rgba(74, 222, 128, 0.4);
+            --accent-ink: #052e16;
+            --accent-soft: rgba(74, 222, 128, 0.12);
+            --accent-line: rgba(74, 222, 128, 0.35);
             --secondary: #818cf8;
-            --tertiary: #f472b6;
-            --text: #fafafa;
-            --text-secondary: #a1a1aa;
-            --text-muted: #71717a;
-            --border: rgba(255, 255, 255, 0.08);
-            --border-hover: rgba(255, 255, 255, 0.15);
+
+            --glass: linear-gradient(180deg, rgba(255, 255, 255, 0.07) 0%, rgba(255, 255, 255, 0.03) 100%);
+            --glass-solid: rgba(20, 22, 26, 0.94);
+            --glass-strong: rgba(14, 16, 19, 0.62);
+            --line: rgba(255, 255, 255, 0.09);
+            --line-strong: rgba(255, 255, 255, 0.16);
+            --sheen: inset 0 1px 0 rgba(255, 255, 255, 0.09);
+            --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 24px 48px -28px rgba(0, 0, 0, 0.75);
+            --blur: blur(18px) saturate(140%);
+
+            --font: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+            --mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+            --r-sm: 10px;
+            --r-md: 16px;
+            --r-lg: 24px;
+            --gutter: clamp(1rem, 4vw, 2.5rem);
+            --maxw: 1180px;
+            --section-y: clamp(4.5rem, 9vw, 7.5rem);
+            --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
         }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        ::selection { background: var(--accent); color: var(--bg); }
-        html { scroll-behavior: smooth; }
+
+        /* ---------- Base ---------- */
+        *, *::before, *::after { box-sizing: border-box; }
+        * { margin: 0; padding: 0; }
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 6rem;
+            -webkit-text-size-adjust: 100%;
+            text-size-adjust: 100%;
+        }
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: var(--bg);
+            font-family: var(--font);
+            font-size: 1rem;
+            line-height: 1.65;
             color: var(--text);
-            line-height: 1.7;
-            font-size: 16px;
+            background-color: var(--bg);
             -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+            overflow-x: hidden;
         }
-        .cursor-glow {
-            position: fixed; width: 500px; height: 500px;
-            background: radial-gradient(circle, rgba(74, 222, 128, 0.08) 0%, transparent 70%);
-            border-radius: 50%; pointer-events: none; z-index: 0;
-            transform: translate(-50%, -50%); transition: opacity 0.3s ease;
+        @supports (overflow-x: clip) { body { overflow-x: clip; } }
+        /* Ambient light behind the glass. Static, painted once. */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            pointer-events: none;
+            background:
+                radial-gradient(52rem 36rem at 8% -6%, rgba(74, 222, 128, 0.13), transparent 62%),
+                radial-gradient(46rem 34rem at 96% 18%, rgba(129, 140, 248, 0.11), transparent 62%),
+                radial-gradient(40rem 30rem at 40% 108%, rgba(74, 222, 128, 0.06), transparent 65%),
+                var(--bg);
         }
-        .noise {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            opacity: 0.03; z-index: 1000; pointer-events: none;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+        img { display: block; max-width: 100%; height: auto; }
+        a { color: inherit; }
+        ul, ol { list-style: none; }
+        ::selection { background: var(--accent); color: var(--accent-ink); }
+        :focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 3px;
+            border-radius: 6px;
         }
-        nav {
-            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-            padding: 1.5rem 4rem; display: flex; justify-content: space-between;
-            align-items: center; transition: all 0.4s ease;
+        .sr-only {
+            position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+            overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
         }
-        nav.scrolled {
-            background: rgba(12, 12, 12, 0.9); backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--border); padding: 1rem 4rem;
+        .skip-link {
+            position: fixed; top: 0.75rem; left: 0.75rem; z-index: 200;
+            padding: 0.6rem 1rem; border-radius: var(--r-sm);
+            background: var(--accent); color: var(--accent-ink);
+            font-weight: 600; font-size: 0.9rem; text-decoration: none;
+            transform: translateY(-160%); transition: transform 0.2s var(--ease);
         }
-        .logo { font-family: 'Syne', sans-serif; font-size: 1.1rem; font-weight: 700; color: var(--text); text-decoration: none; letter-spacing: -0.02em; }
+        .skip-link:focus { transform: none; }
+
+        .container {
+            width: 100%;
+            max-width: calc(var(--maxw) + var(--gutter) * 2);
+            margin-inline: auto;
+            padding-inline: var(--gutter);
+        }
+        .icon { width: 18px; height: 18px; flex: none; }
+
+        /* ---------- Glass ---------- */
+        .glass {
+            background: var(--glass);
+            border: 1px solid var(--line);
+            box-shadow: var(--sheen), var(--shadow);
+            -webkit-backdrop-filter: var(--blur);
+            backdrop-filter: var(--blur);
+        }
+        @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+            .glass, .nav-bar, .nav-menu { background: var(--glass-solid); }
+            .moment figcaption { background: rgba(12, 14, 17, 0.88); }
+        }
+        @media (prefers-reduced-transparency: reduce) {
+            .glass, .nav-bar, .nav-menu {
+                background: var(--glass-solid);
+                -webkit-backdrop-filter: none;
+                backdrop-filter: none;
+            }
+            .moment figcaption { background: rgba(12, 14, 17, 0.88); }
+        }
+
+        /* ---------- Typography ---------- */
+        h1, h2, h3 { font-weight: 600; color: var(--text); text-wrap: balance; }
+        .eyebrow {
+            display: block;
+            font-family: var(--mono);
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.04em;
+            color: var(--accent);
+            margin-bottom: 0.75rem;
+        }
+        .section-title {
+            font-size: clamp(1.9rem, 1.4rem + 2vw, 2.75rem);
+            line-height: 1.1;
+            letter-spacing: -0.03em;
+        }
+        .section-header { margin-bottom: clamp(2rem, 4vw, 3.25rem); }
+        .lead { font-size: clamp(1.05rem, 1rem + 0.3vw, 1.15rem); color: var(--text-2); line-height: 1.7; }
+        strong { color: var(--text); font-weight: 600; }
+
+        /* ---------- Buttons ---------- */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+            min-height: 48px;
+            padding: 0.8rem 1.5rem;
+            border-radius: 999px;
+            font: 500 0.95rem/1 var(--font);
+            text-decoration: none;
+            cursor: pointer;
+            transition: transform 0.25s var(--ease), background-color 0.25s var(--ease),
+                        border-color 0.25s var(--ease), box-shadow 0.25s var(--ease), color 0.25s var(--ease);
+        }
+        .btn-primary {
+            color: var(--accent-ink);
+            background: linear-gradient(180deg, #6ee7a0 0%, var(--accent) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 10px 30px -12px rgba(74, 222, 128, 0.55);
+            font-weight: 600;
+        }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 16px 36px -14px rgba(74, 222, 128, 0.7); }
+        .btn-glass { color: var(--text); }
+        .btn-glass:hover { border-color: var(--line-strong); background: rgba(255, 255, 255, 0.09); transform: translateY(-2px); }
+        .btn:active { transform: translateY(0); }
+
+        /* ---------- Navigation ---------- */
+        .site-header {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 100;
+            padding-top: 0.75rem;
+        }
+        .nav-bar {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            min-height: 56px;
+            padding: 0.4rem 0.4rem 0.4rem 1.25rem;
+            border-radius: 999px;
+            background: var(--glass-strong);
+            border: 1px solid var(--line);
+            box-shadow: var(--sheen), 0 10px 30px -12px rgba(0, 0, 0, 0.6);
+            -webkit-backdrop-filter: blur(20px) saturate(160%);
+            backdrop-filter: blur(20px) saturate(160%);
+        }
+        .logo {
+            font-weight: 700;
+            font-size: 1.05rem;
+            letter-spacing: -0.03em;
+            text-decoration: none;
+            color: var(--text);
+            padding: 0.25rem 0;
+        }
         .logo span { color: var(--accent); }
-        .nav-links { display: flex; gap: 3rem; list-style: none; }
-        .nav-links a { font-size: 0.9rem; font-weight: 500; color: var(--text-secondary); text-decoration: none; transition: color 0.3s ease; position: relative; }
-        .nav-links a:hover { color: var(--text); }
-        .nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1px; background: var(--accent); transition: width 0.3s ease; }
-        .nav-links a:hover::after { width: 100%; }
-        .nav-cta { font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; padding: 0.7rem 1.5rem; background: transparent; border: 1px solid var(--border); color: var(--text); border-radius: 6px; cursor: pointer; transition: all 0.3s ease; text-decoration: none; }
-        .nav-cta:hover { border-color: var(--accent); background: var(--accent-soft); }
-        .hero { min-height: 100vh; display: flex; align-items: center; padding: 0 4rem; position: relative; }
-        .hero-container { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; width: 100%; max-width: 1400px; margin: 0 auto; }
-        .hero-content { max-width: 600px; }
-        .hero-label { display: inline-flex; align-items: center; gap: 0.5rem; font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: var(--accent); margin-bottom: 2rem; opacity: 0; animation: fadeUp 0.8s ease forwards; }
-        .hero-label::before { content: ''; width: 8px; height: 8px; background: var(--accent); border-radius: 50%; animation: pulse 2s ease-in-out infinite; }
-        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
-        .hero h1 { font-family: 'Syne', sans-serif; font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 800; line-height: 1.1; letter-spacing: -0.03em; margin-bottom: 1.5rem; opacity: 0; animation: fadeUp 0.8s ease 0.1s forwards; }
-        .hero h1 .highlight { background: linear-gradient(135deg, var(--accent) 0%, var(--secondary) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-        .hero-description { font-size: 1.15rem; color: var(--text-secondary); margin-bottom: 2.5rem; font-weight: 400; opacity: 0; animation: fadeUp 0.8s ease 0.2s forwards; }
-        .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; opacity: 0; animation: fadeUp 0.8s ease 0.3s forwards; }
-        .hero-image { display: flex; justify-content: center; align-items: center; opacity: 0; animation: fadeUp 0.8s ease 0.4s forwards; }
-        .hero-image-wrapper { position: relative; width: 350px; height: 350px; }
-        .hero-image-wrapper::before { content: ''; position: absolute; inset: -3px; background: linear-gradient(135deg, var(--accent), var(--secondary), var(--tertiary)); border-radius: 50%; z-index: -1; animation: rotate 8s linear infinite; }
-        @keyframes rotate { 100% { transform: rotate(360deg); } }
-        .hero-image-wrapper img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; border: 4px solid var(--bg); }
-        .hero-image-badge { position: absolute; bottom: 20px; right: 10px; background: var(--bg-card); border: 1px solid var(--border); padding: 0.6rem 1rem; border-radius: 50px; font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--accent); display: flex; align-items: center; gap: 0.4rem; }
-        .btn { font-family: 'Inter', sans-serif; font-size: 0.95rem; font-weight: 500; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; transition: all 0.3s ease; cursor: pointer; display: inline-flex; align-items: center; gap: 0.6rem; }
-        .btn-primary { background: var(--accent); color: var(--bg); border: none; }
-        .btn-primary:hover { background: #6ee7a0; transform: translateY(-2px); box-shadow: 0 10px 40px -10px var(--accent-glow); }
-        .btn-secondary { background: transparent; color: var(--text); border: 1px solid var(--border); }
-        .btn-secondary:hover { border-color: var(--text-secondary); background: var(--bg-elevated); }
-        .hero-scroll { position: absolute; bottom: 3rem; left: 4rem; display: flex; align-items: center; gap: 1rem; font-size: 0.8rem; color: var(--text-muted); opacity: 0; animation: fadeUp 0.8s ease 0.5s forwards; }
-        .hero-scroll span { writing-mode: vertical-rl; text-orientation: mixed; }
-        .scroll-line { width: 1px; height: 60px; background: linear-gradient(to bottom, var(--text-muted), transparent); animation: scrollLine 2s ease-in-out infinite; }
-        @keyframes scrollLine { 0% { transform: scaleY(0); transform-origin: top; } 50% { transform: scaleY(1); transform-origin: top; } 50.1% { transform-origin: bottom; } 100% { transform: scaleY(0); transform-origin: bottom; } }
-        @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-        section { padding: 8rem 4rem; position: relative; }
-        .section-header { margin-bottom: 4rem; }
-        .section-number { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--accent); display: block; margin-bottom: 0.5rem; }
-        .section-title { font-family: 'Syne', sans-serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; letter-spacing: -0.02em; }
-        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; }
-        .about-text { font-size: 1.1rem; color: var(--text-secondary); }
-        .about-text p { margin-bottom: 1.5rem; }
-        .about-text strong { color: var(--text); font-weight: 500; }
-        .about-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 2rem; margin-bottom: 1.5rem; transition: all 0.3s ease; }
-        .about-card:hover { border-color: var(--border-hover); transform: translateX(5px); }
-        .about-card h3 { font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; }
-        .about-card p { color: var(--text-secondary); font-size: 0.9rem; }
-        .about-card .tag { display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: var(--accent); background: var(--accent-soft); padding: 0.3rem 0.8rem; border-radius: 4px; margin-top: 0.75rem; }
-        .moments-section { background: linear-gradient(180deg, var(--bg-elevated) 0%, var(--bg) 100%); }
-        .moments-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-        .moment-card { position: relative; border-radius: 16px; overflow: hidden; aspect-ratio: 4/3; cursor: pointer; transition: all 0.4s ease; }
-        .moment-card:first-child { grid-column: span 2; grid-row: span 2; aspect-ratio: auto; }
-        .moment-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
-        .moment-card:hover img { transform: scale(1.05); }
-        .moment-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 60%); display: flex; flex-direction: column; justify-content: flex-end; padding: 1.5rem; opacity: 0; transition: opacity 0.3s ease; }
-        .moment-card:hover .moment-overlay { opacity: 1; }
-        .moment-overlay h3 { font-family: 'Syne', sans-serif; font-size: 1.1rem; font-weight: 600; margin-bottom: 0.3rem; }
-        .moment-overlay p { font-size: 0.85rem; color: var(--text-secondary); }
-        .moment-overlay .moment-tag { display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; color: var(--accent); background: var(--accent-soft); padding: 0.3rem 0.6rem; border-radius: 4px; margin-top: 0.5rem; width: fit-content; }
-        .now-content { max-width: 800px; }
-        .now-role { display: inline-flex; align-items: center; gap: 0.75rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: 50px; padding: 0.6rem 1.2rem 0.6rem 0.6rem; margin-bottom: 2rem; }
-        .now-role-dot { width: 10px; height: 10px; background: var(--accent); border-radius: 50%; animation: pulse 2s ease-in-out infinite; }
-        .now-role span { font-size: 0.85rem; color: var(--text-secondary); }
-        .now-company { font-family: 'Syne', sans-serif; font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 700; margin-bottom: 1rem; }
-        .now-company a { color: var(--accent); text-decoration: none; transition: opacity 0.3s ease; }
-        .now-company a:hover { opacity: 0.8; }
-        .now-description { font-size: 1.15rem; color: var(--text-secondary); margin-bottom: 2.5rem; line-height: 1.8; }
-        .now-focus { display: flex; flex-wrap: wrap; gap: 0.8rem; }
-        .focus-item { font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; padding: 0.6rem 1.2rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: 6px; color: var(--text-secondary); transition: all 0.3s ease; }
-        .focus-item:hover { border-color: var(--accent); color: var(--accent); }
-        .work-grid { display: grid; gap: 1.5rem; }
-        .work-item { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 2.5rem; display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: start; transition: all 0.3s ease; cursor: pointer; text-decoration: none; color: inherit; }
-        .work-item:hover { border-color: var(--border-hover); transform: translateY(-4px); }
-        .work-item h3 { font-family: 'Syne', sans-serif; font-size: 1.3rem; font-weight: 600; margin-bottom: 0.75rem; }
-        .work-item p { color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 1.5rem; }
-        .work-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-        .work-tag { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; padding: 0.4rem 0.8rem; background: var(--bg); border-radius: 4px; color: var(--text-muted); }
-        .work-arrow { font-size: 1.5rem; color: var(--text-muted); transition: all 0.3s ease; }
-        .work-item:hover .work-arrow { color: var(--accent); transform: translate(5px, -5px); }
-        .edu-timeline { position: relative; padding-left: 2rem; }
-        .edu-timeline::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 1px; background: linear-gradient(to bottom, var(--accent), var(--secondary), var(--tertiary)); }
-        .edu-item { position: relative; padding-bottom: 3rem; padding-left: 2rem; }
-        .edu-item:last-child { padding-bottom: 0; }
-        .edu-item::before { content: ''; position: absolute; left: -2rem; top: 0.5rem; width: 12px; height: 12px; background: var(--bg); border: 2px solid var(--accent); border-radius: 50%; transform: translateX(-50%); }
-        .edu-item:nth-child(2)::before { border-color: var(--secondary); }
-        .edu-item:nth-child(3)::before { border-color: var(--tertiary); }
-        .edu-year { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--text-muted); margin-bottom: 0.5rem; }
-        .edu-degree { font-family: 'Syne', sans-serif; font-size: 1.2rem; font-weight: 600; margin-bottom: 0.3rem; }
-        .edu-school { color: var(--text-secondary); font-size: 0.95rem; }
-        .skills-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
-        .skill-group { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; }
-        .skill-group h3 { font-family: 'Syne', sans-serif; font-size: 0.95rem; font-weight: 600; margin-bottom: 1.25rem; color: var(--text-muted); }
-        .skill-list { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-        .skill-item { font-size: 0.85rem; padding: 0.5rem 1rem; background: var(--bg); border-radius: 6px; color: var(--text-secondary); transition: all 0.2s ease; }
-        .skill-item:hover { color: var(--accent); transform: translateY(-2px); }
-        .writing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
-        .writing-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; transition: all 0.3s ease; text-decoration: none; display: block; }
-        .writing-card:hover { border-color: var(--border-hover); transform: translateY(-4px); }
-        .writing-card h3 { font-family: 'Syne', sans-serif; font-size: 1.05rem; font-weight: 600; color: var(--text); margin-bottom: 0.75rem; line-height: 1.4; }
-        .writing-card p { font-size: 0.85rem; color: var(--text-muted); }
-        .contact-section { text-align: center; padding: 10rem 4rem; }
-        .contact-section h2 { font-family: 'Syne', sans-serif; font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 800; margin-bottom: 1.5rem; letter-spacing: -0.02em; }
-        .contact-section p { font-size: 1.15rem; color: var(--text-secondary); max-width: 500px; margin: 0 auto 3rem; }
-        .contact-links { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 4rem; }
-        .contact-link { display: flex; align-items: center; gap: 0.6rem; font-size: 0.9rem; color: var(--text-secondary); text-decoration: none; padding: 0.8rem 1.5rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; transition: all 0.3s ease; }
-        .contact-link:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-3px); }
-        .contact-email { font-family: 'JetBrains Mono', monospace; font-size: 1.1rem; color: var(--accent); text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; transition: opacity 0.3s ease; }
-        .contact-email:hover { opacity: 0.8; }
-        footer { padding: 3rem 4rem; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
-        footer p { font-size: 0.85rem; color: var(--text-muted); }
-        footer .social-links { display: flex; gap: 1.5rem; }
-        footer .social-links a { color: var(--text-muted); text-decoration: none; font-size: 0.85rem; transition: color 0.3s ease; }
-        footer .social-links a:hover { color: var(--accent); }
-        @media (max-width: 1100px) {
-            .hero-container { grid-template-columns: 1fr; text-align: center; }
-            .hero-content { max-width: 100%; }
-            .hero-image { order: -1; }
-            .hero-image-wrapper { width: 280px; height: 280px; }
-            .hero-actions { justify-content: center; }
-            .moments-grid { grid-template-columns: 1fr 1fr; }
-            .moment-card:first-child { grid-column: span 2; grid-row: span 1; }
+        .nav-links { display: flex; align-items: center; gap: 0.15rem; }
+        .nav-links a {
+            display: block;
+            padding: 0.5rem 0.85rem;
+            border-radius: 999px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--text-2);
+            text-decoration: none;
+            transition: color 0.2s var(--ease), background-color 0.2s var(--ease);
         }
-        @media (max-width: 900px) {
-            nav, section, .hero, footer { padding-left: 2rem; padding-right: 2rem; }
+        .nav-links a:hover { color: var(--text); background: rgba(255, 255, 255, 0.06); }
+        .nav-links a[aria-current="true"] {
+            color: var(--text);
+            background: rgba(255, 255, 255, 0.09);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+        }
+        .nav-actions { display: flex; align-items: center; gap: 0.4rem; }
+        .nav-cta {
+            min-height: 44px;
+            padding: 0.6rem 1.15rem;
+            font-size: 0.85rem;
+            -webkit-backdrop-filter: none;
+            backdrop-filter: none;
+        }
+        .nav-toggle {
+            display: none;
+            width: 44px; height: 44px;
+            border-radius: 999px;
+            border: 1px solid var(--line);
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text);
+            cursor: pointer;
+            align-items: center;
+            justify-content: center;
+        }
+        .nav-toggle-bars { position: relative; width: 16px; height: 10px; }
+        .nav-toggle-bars::before, .nav-toggle-bars::after {
+            content: '';
+            position: absolute; left: 0; right: 0;
+            height: 1.5px; border-radius: 2px;
+            background: currentColor;
+            transition: transform 0.25s var(--ease), top 0.25s var(--ease);
+        }
+        .nav-toggle-bars::before { top: 1px; }
+        .nav-toggle-bars::after { top: 7.5px; }
+        .nav-toggle[aria-expanded="true"] .nav-toggle-bars::before { top: 4.25px; transform: rotate(45deg); }
+        .nav-toggle[aria-expanded="true"] .nav-toggle-bars::after { top: 4.25px; transform: rotate(-45deg); }
+        .nav-menu { display: none; }
+
+        /* ---------- Hero ---------- */
+        .hero {
+            min-height: 100vh;
+            min-height: 100svh;
+            display: flex;
+            align-items: center;
+            padding-block: 7.5rem 6.5rem;
+            position: relative;
+        }
+        .hero-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+            gap: clamp(2.5rem, 6vw, 5rem);
+            align-items: center;
+        }
+        .status-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.45rem 0.9rem 0.45rem 0.75rem;
+            border-radius: 999px;
+            font-family: var(--mono);
+            font-size: 0.75rem;
+            color: var(--text-2);
+            margin-bottom: 1.75rem;
+            box-shadow: var(--sheen);
+        }
+        .status-dot {
+            position: relative;
+            width: 8px; height: 8px;
+            border-radius: 50%;
+            background: var(--accent);
+            box-shadow: 0 0 0 3px var(--accent-soft);
+            flex: none;
+        }
+        .hero h1 {
+            font-size: clamp(2.4rem, 1.5rem + 3.6vw, 4.25rem);
+            line-height: 1.04;
+            letter-spacing: -0.04em;
+            font-weight: 650;
+            margin-bottom: 1.5rem;
+            max-width: 15ch;
+        }
+        .hero h1 .highlight {
+            color: var(--accent);
+            background: linear-gradient(120deg, #6ee7a0 0%, var(--accent) 40%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero .lead { max-width: 34rem; margin-bottom: 2.25rem; }
+        .hero-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+
+        .portrait {
+            position: relative;
+            justify-self: center;
+            width: min(100%, 380px);
+            aspect-ratio: 1;
+            padding: 12px;
+            border-radius: 50%;
+        }
+        .portrait::after {
+            /* soft specular rim */
+            content: '';
+            position: absolute; inset: 0;
+            border-radius: inherit;
+            pointer-events: none;
+            background: linear-gradient(160deg, rgba(255, 255, 255, 0.16) 0%, transparent 30%, transparent 70%, rgba(74, 222, 128, 0.12) 100%);
+            -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 12px), #000 calc(100% - 11px));
+            mask: radial-gradient(farthest-side, transparent calc(100% - 12px), #000 calc(100% - 11px));
+        }
+        .portrait img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            background: var(--surface);
+        }
+        .portrait-badge {
+            position: absolute;
+            right: 4%;
+            bottom: 9%;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            padding: 0.55rem 0.95rem;
+            border-radius: 999px;
+            font-family: var(--mono);
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: var(--text);
+            background: var(--glass-strong);
+        }
+        .portrait-badge .icon { width: 16px; height: 16px; color: var(--accent); }
+
+        .scroll-cue {
+            position: absolute;
+            left: 50%;
+            bottom: 1.75rem;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.6rem;
+            font-family: var(--mono);
+            font-size: 0.7rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--text-3);
+            text-decoration: none;
+            transition: color 0.2s var(--ease);
+        }
+        .scroll-cue:hover { color: var(--text-2); }
+        .scroll-cue::after {
+            content: '';
+            width: 1px; height: 36px;
+            background: linear-gradient(to bottom, currentColor, transparent);
+        }
+
+        /* ---------- Sections ---------- */
+        .section { padding-block: var(--section-y); }
+        .section + .section { border-top: 1px solid rgba(255, 255, 255, 0.04); }
+
+        /* About */
+        .about-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+            gap: clamp(2rem, 5vw, 4.5rem);
+            align-items: start;
+        }
+        .about-text p + p { margin-top: 1.35rem; }
+        .info-list { display: grid; gap: 1rem; }
+        .info-card {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 1rem;
+            padding: 1.5rem;
+            border-radius: var(--r-md);
+        }
+        .info-icon {
+            display: grid;
+            place-items: center;
+            width: 40px; height: 40px;
+            border-radius: 12px;
+            color: var(--accent);
+            background: var(--accent-soft);
+            box-shadow: inset 0 0 0 1px rgba(74, 222, 128, 0.18);
+        }
+        .info-card h3 { font-size: 1rem; letter-spacing: -0.01em; margin-bottom: 0.3rem; }
+        .info-card p { font-size: 0.925rem; color: var(--text-2); }
+
+        .tag {
+            display: inline-flex;
+            align-items: center;
+            font-family: var(--mono);
+            font-size: 0.7rem;
+            font-weight: 500;
+            line-height: 1;
+            padding: 0.4rem 0.65rem;
+            border-radius: 6px;
+            color: var(--accent);
+            background: var(--accent-soft);
+            box-shadow: inset 0 0 0 1px rgba(74, 222, 128, 0.18);
+        }
+        .info-card .tag { margin-top: 0.8rem; }
+
+        /* Moments */
+        .moments-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            grid-auto-rows: minmax(0, 1fr);
+            gap: 1rem;
+        }
+        .moment {
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--r-lg);
+            aspect-ratio: 4 / 3;
+            background: var(--surface);
+            border: 1px solid var(--line);
+            box-shadow: var(--shadow);
+            isolation: isolate;
+        }
+        .moment:first-child { grid-column: span 2; grid-row: span 2; aspect-ratio: auto; }
+        .moment img {
+            position: absolute; inset: 0;
+            width: 100%; height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s var(--ease);
+        }
+        .moment:first-child img { object-position: 50% 70%; }
+        .moment-thws img { object-position: 50% 35%; }
+        .moment-medal img { object-position: 50% 30%; }
+        .moment::before {
+            content: '';
+            position: absolute; inset: 0;
+            z-index: 1;
+            background: linear-gradient(to top, rgba(8, 9, 11, 0.55) 0%, transparent 45%);
+            pointer-events: none;
+        }
+        .moment figcaption {
+            position: absolute;
+            left: 0.75rem; right: 0.75rem; bottom: 0.75rem;
+            z-index: 2;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 0.75rem;
+            padding: 0.85rem 1rem;
+            border-radius: var(--r-md);
+            background: rgba(12, 14, 17, 0.55);
+        }
+        .moment h3 { font-size: 1rem; letter-spacing: -0.01em; line-height: 1.3; }
+        .moment p { font-size: 0.85rem; color: var(--text-2); line-height: 1.45; }
+        .moment .tag { flex: none; }
+        @media (hover: hover) {
+            .moment:hover img { transform: scale(1.03); }
+        }
+
+        /* Now */
+        .now-panel {
+            border-radius: var(--r-lg);
+            padding: clamp(1.5rem, 4vw, 3rem);
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(0, 0.8fr);
+            gap: clamp(1.75rem, 4vw, 3.5rem);
+        }
+        .role-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.4rem 0.85rem 0.4rem 0.7rem;
+            border-radius: 999px;
+            font-size: 0.85rem;
+            color: var(--text-2);
+            border: 1px solid var(--line);
+            background: rgba(255, 255, 255, 0.04);
+            margin-bottom: 1.25rem;
+        }
+        .now-company {
+            font-size: clamp(1.6rem, 1.2rem + 1.6vw, 2.25rem);
+            letter-spacing: -0.03em;
+            line-height: 1.15;
+            margin-bottom: 1.25rem;
+        }
+        .now-company a {
+            color: var(--accent);
+            text-decoration: none;
+            background-image: linear-gradient(currentColor, currentColor);
+            background-size: 0% 1px;
+            background-repeat: no-repeat;
+            background-position: 0 100%;
+            transition: background-size 0.3s var(--ease);
+        }
+        .now-company a:hover { background-size: 100% 1px; }
+        .now-copy p { color: var(--text-2); }
+        .now-copy p + p { margin-top: 1rem; }
+        .now-aside {
+            border-left: 1px solid var(--line);
+            padding-left: clamp(1.75rem, 4vw, 3.5rem);
+            align-self: stretch;
+        }
+        .aside-label {
+            font-family: var(--mono);
+            font-size: 0.72rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--text-3);
+            margin-bottom: 1rem;
+        }
+        .chip-list { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+        .chip {
+            font-family: var(--mono);
+            font-size: 0.78rem;
+            line-height: 1.3;
+            padding: 0.55rem 0.9rem;
+            border-radius: 999px;
+            color: var(--text-2);
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--line);
+            transition: color 0.2s var(--ease), border-color 0.2s var(--ease), background-color 0.2s var(--ease);
+        }
+        .chip:hover { color: var(--text); border-color: var(--accent-line); background: var(--accent-soft); }
+
+        /* Cards (work + writing) */
+        .card-grid { display: grid; gap: 1rem; }
+        .work-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        .writing-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+        .card {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            border-radius: var(--r-lg);
+            padding: clamp(1.5rem, 3vw, 2rem);
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.3s var(--ease), border-color 0.3s var(--ease), background-color 0.3s var(--ease);
+        }
+        .card:hover { transform: translateY(-3px); border-color: var(--line-strong); }
+        .card-head {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-bottom: 0.75rem;
+        }
+        .card h3 { font-size: 1.2rem; letter-spacing: -0.02em; line-height: 1.3; }
+        .card p { color: var(--text-2); font-size: 0.95rem; }
+        .card-arrow {
+            display: grid;
+            place-items: center;
+            flex: none;
+            width: 36px; height: 36px;
+            border-radius: 50%;
+            color: var(--text-3);
+            border: 1px solid var(--line);
+            background: rgba(255, 255, 255, 0.04);
+            transition: color 0.3s var(--ease), border-color 0.3s var(--ease), background-color 0.3s var(--ease), transform 0.3s var(--ease);
+        }
+        .card-arrow .icon { width: 16px; height: 16px; }
+        .card:hover .card-arrow, .card:focus-visible .card-arrow {
+            color: var(--accent-ink);
+            background: var(--accent);
+            border-color: var(--accent);
+            transform: translate(2px, -2px);
+        }
+        .work-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: auto; padding-top: 1.5rem; }
+        .work-tag {
+            font-family: var(--mono);
+            font-size: 0.72rem;
+            line-height: 1;
+            padding: 0.45rem 0.7rem;
+            border-radius: 6px;
+            color: var(--text-2);
+            background: rgba(0, 0, 0, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .writing-card h3 { font-size: 1.05rem; line-height: 1.4; margin-bottom: 0; }
+        .writing-card .card-head { margin-bottom: 0; }
+        .writing-card .card-meta {
+            margin-top: auto;
+            padding-top: 1.75rem;
+            font-family: var(--mono);
+            font-size: 0.75rem;
+            color: var(--text-3);
+        }
+
+        /* Education */
+        .timeline-panel { border-radius: var(--r-lg); padding: clamp(1.5rem, 4vw, 2.75rem); }
+        .timeline { position: relative; display: grid; gap: 2.25rem; padding-left: 1.75rem; }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 5px; top: 0.6rem; bottom: 0.6rem;
+            width: 1px;
+            background: linear-gradient(to bottom, var(--accent-line), rgba(129, 140, 248, 0.3), rgba(255, 255, 255, 0.06));
+        }
+        .timeline li {
+            position: relative;
+            display: grid;
+            grid-template-columns: 9.5rem minmax(0, 1fr);
+            gap: 0.25rem 2rem;
+        }
+        .timeline li::before {
+            content: '';
+            position: absolute;
+            left: calc(-1.75rem + 1px);
+            top: 0.45rem;
+            width: 9px; height: 9px;
+            border-radius: 50%;
+            background: var(--bg);
+            border: 1.5px solid var(--accent);
+            box-shadow: 0 0 0 4px rgba(8, 9, 11, 0.9);
+        }
+        .timeline li:nth-child(2)::before { border-color: var(--secondary); }
+        .timeline li:nth-child(3)::before { border-color: var(--text-3); }
+        .edu-year {
+            font-family: var(--mono);
+            font-size: 0.8rem;
+            color: var(--text-3);
+            padding-top: 0.2rem;
+            white-space: nowrap;
+        }
+        .edu-degree { font-size: 1.15rem; letter-spacing: -0.02em; line-height: 1.35; margin-bottom: 0.25rem; }
+        .edu-school { color: var(--text-2); font-size: 0.95rem; }
+
+        /* Skills */
+        .skills-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; }
+        .skill-group { border-radius: var(--r-lg); padding: 1.5rem; }
+        .skill-group h3 {
+            font-family: var(--mono);
+            font-size: 0.72rem;
+            font-weight: 500;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--text-3);
+            margin-bottom: 1.1rem;
+        }
+        .skill-group .chip { font-family: var(--font); font-size: 0.85rem; }
+
+        /* Contact */
+        .contact-panel {
+            position: relative;
+            overflow: hidden;
+            border-radius: calc(var(--r-lg) + 4px);
+            padding: clamp(2.5rem, 7vw, 5rem) clamp(1.25rem, 5vw, 4rem);
+            text-align: center;
+            isolation: isolate;
+        }
+        .contact-panel::before {
+            content: '';
+            position: absolute;
+            inset: -40% 10% auto;
+            height: 80%;
+            z-index: -1;
+            background: radial-gradient(closest-side, rgba(74, 222, 128, 0.14), transparent);
+            pointer-events: none;
+        }
+        .contact-panel h2 {
+            font-size: clamp(2.2rem, 1.5rem + 3.2vw, 3.75rem);
+            letter-spacing: -0.04em;
+            line-height: 1.05;
+            margin-bottom: 1.25rem;
+        }
+        .contact-panel .lead { max-width: 32rem; margin: 0 auto 2.25rem; }
+        .contact-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 2.25rem; }
+        .contact-email {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            max-width: 100%;
+            font-family: var(--mono);
+            font-size: clamp(0.85rem, 0.75rem + 0.6vw, 1.05rem);
+            color: var(--accent);
+            text-decoration: none;
+            overflow-wrap: anywhere;
+            padding: 0.25rem 0;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.25s var(--ease);
+        }
+        .contact-email:hover { border-bottom-color: var(--accent-line); }
+
+        /* Footer */
+        .site-footer { padding-block: 2rem 2.5rem; }
+        .footer-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--line);
+        }
+        .site-footer p { font-size: 0.85rem; color: var(--text-3); }
+        .footer-links { display: flex; gap: 0.25rem; }
+        .footer-links a {
+            font-size: 0.85rem;
+            color: var(--text-3);
+            text-decoration: none;
+            padding: 0.4rem 0.7rem;
+            border-radius: 999px;
+            transition: color 0.2s var(--ease), background-color 0.2s var(--ease);
+        }
+        .footer-links a:hover { color: var(--text); background: rgba(255, 255, 255, 0.05); }
+
+        /* ---------- Motion ---------- */
+        @keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+        .hero-content > *, .portrait { animation: rise 0.7s var(--ease) both; }
+        .hero-content > :nth-child(2) { animation-delay: 0.06s; }
+        .hero-content > :nth-child(3) { animation-delay: 0.12s; }
+        .hero-content > :nth-child(4) { animation-delay: 0.18s; }
+        .portrait { animation-delay: 0.1s; }
+        .js .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.7s var(--ease), transform 0.7s var(--ease); }
+        .js .reveal.is-visible { opacity: 1; transform: none; }
+
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+            .js .reveal { opacity: 1; transform: none; }
+            .card:hover, .btn:hover { transform: none; }
+        }
+
+        /* ---------- Responsive ---------- */
+        @media (max-width: 1080px) {
+            .writing-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .skills-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .nav-links a { padding-inline: 0.65rem; }
+        }
+
+        @media (max-width: 960px) {
             .nav-links { display: none; }
-            .about-grid { grid-template-columns: 1fr; gap: 3rem; }
-            .work-item { grid-template-columns: 1fr; }
-            .work-arrow { display: none; }
-            footer { flex-direction: column; gap: 1.5rem; text-align: center; }
-            .moments-grid { grid-template-columns: 1fr; }
-            .moment-card:first-child { grid-column: span 1; }
+            .nav-toggle { display: inline-flex; }
+            .nav-menu {
+                position: absolute;
+                top: calc(100% + 0.5rem);
+                left: 0; right: 0;
+                padding: 0.5rem;
+                border-radius: var(--r-lg);
+                background: rgba(14, 16, 19, 0.94);
+                border: 1px solid var(--line);
+                box-shadow: var(--sheen), 0 24px 48px -20px rgba(0, 0, 0, 0.8);
+                -webkit-backdrop-filter: blur(24px) saturate(160%);
+                backdrop-filter: blur(24px) saturate(160%);
+            }
+            .nav-menu:not([hidden]) { display: block; animation: rise 0.25s var(--ease) both; }
+            .nav-menu ul { display: grid; gap: 0.15rem; }
+            .nav-menu a {
+                display: block;
+                padding: 0.8rem 1rem;
+                border-radius: var(--r-sm);
+                font-size: 1rem;
+                font-weight: 500;
+                color: var(--text-2);
+                text-decoration: none;
+            }
+            .nav-menu a:hover, .nav-menu a[aria-current="true"] { color: var(--text); background: rgba(255, 255, 255, 0.07); }
+
+            .hero { min-height: 0; padding-block: 8rem 5rem; }
+            .hero-grid { grid-template-columns: 1fr; text-align: center; gap: 2.5rem; }
+            .hero-content { display: flex; flex-direction: column; align-items: center; }
+            .hero h1 { max-width: 18ch; }
+            .hero-actions { justify-content: center; }
+            .portrait { order: -1; width: min(72vw, 300px); padding: 10px; }
+            .scroll-cue { display: none; }
+
+            .about-grid { grid-template-columns: 1fr; }
+            .now-panel { grid-template-columns: 1fr; }
+            .now-aside { border-left: 0; padding-left: 0; border-top: 1px solid var(--line); padding-top: 1.75rem; }
+
+            .moments-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: auto; }
+            .moment:first-child { grid-column: span 2; grid-row: auto; aspect-ratio: 16 / 9; }
         }
-        @media (max-width: 600px) {
-            nav, section, .hero, footer { padding-left: 1.5rem; padding-right: 1.5rem; }
-            .hero-actions { flex-direction: column; }
-            .btn { width: 100%; justify-content: center; }
-            .contact-links { flex-direction: column; align-items: center; }
-            .contact-link { width: 100%; justify-content: center; }
-            .hero-image-wrapper { width: 220px; height: 220px; }
+
+        @media (max-width: 720px) {
+            .work-grid, .writing-grid, .skills-grid { grid-template-columns: 1fr; }
+            .timeline li { grid-template-columns: 1fr; }
+            .moments-grid { grid-template-columns: 1fr; }
+            .moment, .moment:first-child { grid-column: auto; aspect-ratio: auto; display: flex; flex-direction: column; }
+            .moment::before { display: none; }
+            .moment img { position: static; aspect-ratio: 4 / 3; height: auto; }
+            .moment figcaption {
+                position: static;
+                border: 0;
+                border-top: 1px solid var(--line);
+                border-radius: 0;
+                box-shadow: none;
+                background: var(--glass);
+            }
+            .footer-inner { flex-direction: column; text-align: center; }
+        }
+
+        @media (max-width: 480px) {
+            .nav-cta { display: none; }
+            .hero-actions { flex-direction: column; width: 100%; }
+            .hero-actions .btn { width: 100%; }
+            .contact-links { flex-direction: column; }
+            .contact-links .btn { width: 100%; }
+            .info-card { grid-template-columns: 1fr; gap: 0.85rem; padding: 1.25rem; }
+            .moment figcaption { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
         }
     </style>
 </head>
 <body>
-    <div class="cursor-glow" id="cursorGlow"></div>
-    <div class="noise"></div>
-    <nav id="navbar">
-        <a href="#" class="logo">tharun<span>.</span></a>
-        <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#moments">Moments</a></li>
-            <li><a href="#now">Now</a></li>
-            <li><a href="#work">Work</a></li>
-            <li><a href="#writing">Writing</a></li>
-        </ul>
-        <a href="mailto:korinetharunkumarpalli@gmail.com" class="nav-cta">Say Hello</a>
-    </nav>
-    <section class="hero">
-        <div class="hero-container">
-            <div class="hero-content">
-                <div class="hero-label">Currently building at TTZ Kitzingen</div>
-                <h1>I build <span class="highlight">intelligent systems</span> that understand and learn.</h1>
-                <p class="hero-description">AI Researcher exploring the intersection of large language models, computer vision, and robotics. Turning complex AI research into real-world solutions.</p>
-                <div class="hero-actions">
-                    <a href="mailto:korinetharunkumarpalli@gmail.com" class="btn btn-primary">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                        Get in touch
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- Icon sprite -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+        <symbol id="i-mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5"/></g></symbol>
+        <symbol id="i-github" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></symbol>
+        <symbol id="i-linkedin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></g></symbol>
+        <symbol id="i-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+        <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M7 17 17 7M8 7h9v9"/></symbol>
+        <symbol id="i-cap" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 9 12 4 2 9l10 5 10-5z"/><path d="M6 11v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5"/></g></symbol>
+        <symbol id="i-pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></g></symbol>
+        <symbol id="i-globe" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></g></symbol>
+    </svg>
+
+    <header class="site-header">
+        <div class="container">
+            <nav class="nav-bar" aria-label="Primary">
+                <a href="#top" class="logo" aria-label="Tharun, back to top">tharun<span>.</span></a>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#moments">Moments</a></li>
+                    <li><a href="#now">Now</a></li>
+                    <li><a href="#work">Work</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#writing">Writing</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <a href="mailto:korinetharunkumarpalli@gmail.com" class="btn btn-glass glass nav-cta">Say Hello</a>
+                    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu">
+                        <span class="nav-toggle-bars" aria-hidden="true"></span>
+                        <span class="sr-only">Menu</span>
+                    </button>
+                </div>
+                <div class="nav-menu" id="nav-menu" hidden>
+                    <ul>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#moments">Moments</a></li>
+                        <li><a href="#now">Now</a></li>
+                        <li><a href="#work">Work</a></li>
+                        <li><a href="#education">Education</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#writing">Writing</a></li>
+                        <li><a href="mailto:korinetharunkumarpalli@gmail.com">Say Hello</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main">
+        <section class="hero" id="top" aria-labelledby="hero-title">
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <p class="status-pill glass"><span class="status-dot" aria-hidden="true"></span>Currently building at TTZ Kitzingen</p>
+                    <h1 id="hero-title">I build <span class="highlight">intelligent systems</span> that understand and learn.</h1>
+                    <p class="lead">AI Researcher exploring the intersection of large language models, computer vision, and robotics. Turning complex AI research into real-world solutions.</p>
+                    <div class="hero-actions">
+                        <a href="mailto:korinetharunkumarpalli@gmail.com" class="btn btn-primary">
+                            <svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg>
+                            Get in touch
+                        </a>
+                        <a href="https://github.com/tharun-kumar-korinepalli" target="_blank" rel="noopener noreferrer" class="btn btn-glass glass">
+                            <svg class="icon" aria-hidden="true"><use href="#i-github"/></svg>
+                            View GitHub
+                        </a>
+                    </div>
+                </div>
+                <div class="portrait glass">
+                    <img src="images/profile.jpg" alt="Portrait of Tharun Kumar Korine Palli" width="800" height="800" fetchpriority="high" decoding="async">
+                    <span class="portrait-badge glass">
+                        <svg class="icon" aria-hidden="true"><use href="#i-cap"/></svg>
+                        M.Sc. AI
+                    </span>
+                </div>
+            </div>
+            <a href="#about" class="scroll-cue" aria-label="Scroll to About">Scroll</a>
+        </section>
+
+        <section id="about" class="section" aria-labelledby="about-title">
+            <div class="container">
+                <header class="section-header reveal">
+                    <span class="eyebrow">01</span>
+                    <h2 id="about-title" class="section-title">About</h2>
+                </header>
+                <div class="about-grid">
+                    <div class="about-text lead reveal">
+                        <p>I'm <strong>Tharun Kumar Korine Palli</strong>, an AI researcher based in Würzburg, Germany. My work sits at the intersection of research and real-world application. I'm particularly interested in how we can make AI systems more practical, efficient, and accessible.</p>
+                        <p>My journey started with mechanical engineering before I discovered my passion for AI. This unique background gives me a different perspective on building systems. I think about hardware constraints, practical deployment, and real-world impact from day one.</p>
+                        <p>These days, I spend most of my time working with <strong>large language models, RAG systems, computer vision</strong>, and figuring out how to deploy AI on edge devices. I enjoy the challenge of taking complex models and making them work in production environments.</p>
+                    </div>
+                    <ul class="info-list reveal">
+                        <li class="info-card glass">
+                            <span class="info-icon" aria-hidden="true"><svg class="icon"><use href="#i-cap"/></svg></span>
+                            <div>
+                                <h3>Education</h3>
+                                <p>M.Sc. in Artificial Intelligence from THWS, Germany. B.Tech from G. Pulla Reddy Engineering College with First Class Distinction.</p>
+                                <span class="tag">Gold Medalist</span>
+                            </div>
+                        </li>
+                        <li class="info-card glass">
+                            <span class="info-icon" aria-hidden="true"><svg class="icon"><use href="#i-pin"/></svg></span>
+                            <div>
+                                <h3>Location</h3>
+                                <p>Currently in Würzburg, Germany. Open to collaborations across Europe and globally.</p>
+                            </div>
+                        </li>
+                        <li class="info-card glass">
+                            <span class="info-icon" aria-hidden="true"><svg class="icon"><use href="#i-globe"/></svg></span>
+                            <div>
+                                <h3>Languages</h3>
+                                <p>English (Fluent) · German (Learning) · Telugu (Native)</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="moments" class="section" aria-labelledby="moments-title">
+            <div class="container">
+                <header class="section-header reveal">
+                    <span class="eyebrow">02</span>
+                    <h2 id="moments-title" class="section-title">Moments</h2>
+                </header>
+                <div class="moments-grid reveal">
+                    <figure class="moment">
+                        <img src="images/graduation-group.jpg" alt="Tharun with fellow AI graduates, seated on outdoor steps at THWS" width="2000" height="1333" loading="lazy" decoding="async">
+                        <figcaption class="glass">
+                            <div><h3>M.Sc. Graduation Day</h3><p>With fellow AI graduates at THWS</p></div>
+                            <span class="tag">2025</span>
+                        </figcaption>
+                    </figure>
+                    <figure class="moment moment-thws">
+                        <img src="images/graduation-thws.jpg" alt="Tharun holding his THWS master's certificate with a professor and a fellow graduate" width="2048" height="1365" loading="lazy" decoding="async">
+                        <figcaption class="glass">
+                            <div><h3>Master's Certificate</h3><p>THWS Würzburg, Germany</p></div>
+                            <span class="tag">THWS</span>
+                        </figcaption>
+                    </figure>
+                    <figure class="moment moment-medal">
+                        <img src="images/gold-medal.jpg" alt="Tharun receiving a certificate of merit and gold medal at G. Pulla Reddy Engineering College" width="1170" height="1005" loading="lazy" decoding="async">
+                        <figcaption class="glass">
+                            <div><h3>Gold Medal</h3><p>G. Pulla Reddy Engineering College</p></div>
+                            <span class="tag">2021</span>
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <section id="now" class="section" aria-labelledby="now-title">
+            <div class="container">
+                <header class="section-header reveal">
+                    <span class="eyebrow">03</span>
+                    <h2 id="now-title" class="section-title">What I'm doing now</h2>
+                </header>
+                <article class="now-panel glass reveal">
+                    <div class="now-copy">
+                        <p class="role-pill"><span class="status-dot" aria-hidden="true"></span>AI Researcher</p>
+                        <h3 class="now-company">@ <a href="https://ttz-kt.thws.de/" target="_blank" rel="noopener noreferrer">TTZ Kitzingen</a></h3>
+                        <p>I'm part of the research team at the Technology Transfer Center Kitzingen (TTZ-KT), an initiative of THWS focused on bringing AI, robotics, and digital transformation to regional industry. We work closely with local companies to solve real engineering challenges using cutting-edge AI.</p>
+                        <p>My current focus includes developing LLM-powered solutions, building RAG systems for industrial applications, computer vision for quality control, and exploring how we can deploy these systems efficiently on edge hardware.</p>
+                    </div>
+                    <div class="now-aside">
+                        <p class="aside-label">Focus areas</p>
+                        <ul class="chip-list">
+                            <li class="chip">Large Language Models</li>
+                            <li class="chip">RAG Systems</li>
+                            <li class="chip">Computer Vision</li>
+                            <li class="chip">Edge AI</li>
+                            <li class="chip">Robotics Integration</li>
+                            <li class="chip">Industrial AI</li>
+                        </ul>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="work" class="section" aria-labelledby="work-title">
+            <div class="container">
+                <header class="section-header reveal">
+                    <span class="eyebrow">04</span>
+                    <h2 id="work-title" class="section-title">Selected Work</h2>
+                </header>
+                <div class="card-grid work-grid reveal">
+                    <a href="https://github.com/tharun-kumar-korinepalli" target="_blank" rel="noopener noreferrer" class="card glass">
+                        <div class="card-head">
+                            <h3>Real-time Detection Systems</h3>
+                            <span class="card-arrow" aria-hidden="true"><svg class="icon"><use href="#i-arrow"/></svg></span>
+                        </div>
+                        <p>Developed and deployed object detection models for industrial quality control, optimized for edge devices with TensorRT acceleration.</p>
+                        <ul class="work-tags"><li class="work-tag">NVIDIA TAO</li><li class="work-tag">Jetson</li><li class="work-tag">TensorRT</li></ul>
                     </a>
-                    <a href="https://github.com/tharun-kumar-22" target="_blank" class="btn btn-secondary">View GitHub</a>
+                    <a href="https://github.com/tharun-kumar-korinepalli/camera_based_person_detection" target="_blank" rel="noopener noreferrer" class="card glass">
+                        <div class="card-head">
+                            <h3>Multi-Camera Tracking</h3>
+                            <span class="card-arrow" aria-hidden="true"><svg class="icon"><use href="#i-arrow"/></svg></span>
+                        </div>
+                        <p>Built a system for person detection and re-identification across multiple camera feeds with consistent tracking.</p>
+                        <ul class="work-tags"><li class="work-tag">YOLOv8</li><li class="work-tag">ReID</li><li class="work-tag">OpenCV</li></ul>
+                    </a>
+                    <a href="https://github.com/tharun-kumar-korinepalli/Future-Pose-Predictive-Modeling-of-Human-Motion-Dynamics-using-Skeleton-Data" target="_blank" rel="noopener noreferrer" class="card glass">
+                        <div class="card-head">
+                            <h3>Motion Prediction</h3>
+                            <span class="card-arrow" aria-hidden="true"><svg class="icon"><use href="#i-arrow"/></svg></span>
+                        </div>
+                        <p>Predictive modeling of human motion dynamics using sequence models, achieving strong accuracy on pose forecasting tasks.</p>
+                        <ul class="work-tags"><li class="work-tag">GRU</li><li class="work-tag">Sequence Modeling</li><li class="work-tag">PyTorch</li></ul>
+                    </a>
+                    <a href="https://github.com/tharun-kumar-korinepalli/Artificial-Neural-Networks---Suduko-Solver" target="_blank" rel="noopener noreferrer" class="card glass">
+                        <div class="card-head">
+                            <h3>Neural Problem Solving</h3>
+                            <span class="card-arrow" aria-hidden="true"><svg class="icon"><use href="#i-arrow"/></svg></span>
+                        </div>
+                        <p>Exploring how neural networks can learn to solve combinatorial puzzles, experimenting with different architectures.</p>
+                        <ul class="work-tags"><li class="work-tag">CNN</li><li class="work-tag">Transformers</li><li class="work-tag">Deep Learning</li></ul>
+                    </a>
                 </div>
             </div>
-            <div class="hero-image">
-                <div class="hero-image-wrapper">
-                    <img src="images/profile.jpg" alt="Tharun Kumar Korine Palli">
-                    <div class="hero-image-badge"><span>🎓</span> M.Sc. AI</div>
+        </section>
+
+        <section id="education" class="section" aria-labelledby="education-title">
+            <div class="container">
+                <header class="section-header reveal">
+                    <span class="eyebrow">05</span>
+                    <h2 id="education-title" class="section-title">Education</h2>
+                </header>
+                <div class="timeline-panel glass reveal">
+                    <ol class="timeline">
+                        <li>
+                            <p class="edu-year">2023 – 2025</p>
+                            <div>
+                                <h3 class="edu-degree">M.Sc. Artificial Intelligence</h3>
+                                <p class="edu-school">Technische Hochschule Würzburg-Schweinfurt, Germany</p>
+                            </div>
+                        </li>
+                        <li>
+                            <p class="edu-year">2018 – 2021</p>
+                            <div>
+                                <h3 class="edu-degree">B.Tech Mechanical Engineering + CS Minor</h3>
+                                <p class="edu-school">G. Pulla Reddy Engineering College, India · Gold Medalist</p>
+                            </div>
+                        </li>
+                        <li>
+                            <p class="edu-year">2015 – 2018</p>
+                            <div>
+                                <h3 class="edu-degree">Diploma in Mechanical Engineering</h3>
+                                <p class="edu-school">Govt. Polytechnic, Anantapur, India</p>
+                            </div>
+                        </li>
+                    </ol>
                 </div>
             </div>
-        </div>
-        <div class="hero-scroll"><div class="scroll-line"></div><span>Scroll</span></div>
-    </section>
-    <section id="about">
-        <div class="section-header"><span class="section-number">01</span><h2 class="section-title">About</h2></div>
-        <div class="about-grid">
-            <div class="about-text">
-                <p>I'm <strong>Tharun Kumar Korine Palli</strong>, an AI researcher based in Würzburg, Germany. My work sits at the intersection of research and real-world application — I'm particularly interested in how we can make AI systems more practical, efficient, and accessible.</p>
-                <p>My journey started with mechanical engineering before I discovered my passion for AI. This unique background gives me a different perspective on building systems — I think about hardware constraints, practical deployment, and real-world impact from day one.</p>
-                <p>These days, I spend most of my time working with <strong>large language models, RAG systems, computer vision</strong>, and figuring out how to deploy AI on edge devices. I enjoy the challenge of taking complex models and making them work in production environments.</p>
+        </section>
+
+        <section id="skills" class="section" aria-labelledby="skills-title">
+            <div class="container">
+                <header class="section-header reveal">
+                    <span class="eyebrow">06</span>
+                    <h2 id="skills-title" class="section-title">Skills &amp; Tools</h2>
+                </header>
+                <div class="skills-grid reveal">
+                    <div class="skill-group glass">
+                        <h3>AI &amp; ML</h3>
+                        <ul class="chip-list"><li class="chip">Deep Learning</li><li class="chip">LLMs</li><li class="chip">RAG</li><li class="chip">Computer Vision</li><li class="chip">NLP</li></ul>
+                    </div>
+                    <div class="skill-group glass">
+                        <h3>Frameworks</h3>
+                        <ul class="chip-list"><li class="chip">PyTorch</li><li class="chip">TensorFlow</li><li class="chip">Hugging Face</li><li class="chip">LangChain</li><li class="chip">OpenCV</li></ul>
+                    </div>
+                    <div class="skill-group glass">
+                        <h3>Edge &amp; Deployment</h3>
+                        <ul class="chip-list"><li class="chip">NVIDIA TAO</li><li class="chip">TensorRT</li><li class="chip">Jetson</li><li class="chip">Docker</li></ul>
+                    </div>
+                    <div class="skill-group glass">
+                        <h3>Development</h3>
+                        <ul class="chip-list"><li class="chip">Python</li><li class="chip">Git</li><li class="chip">Linux</li><li class="chip">FastAPI</li></ul>
+                    </div>
+                </div>
             </div>
-            <div class="about-visual">
-                <div class="about-card"><h3>🎓 Education</h3><p>M.Sc. in Artificial Intelligence from THWS, Germany. B.Tech from G. Pulla Reddy Engineering College with First Class Distinction.</p><span class="tag">Gold Medalist</span></div>
-                <div class="about-card"><h3>📍 Location</h3><p>Currently in Würzburg, Germany. Open to collaborations across Europe and globally.</p></div>
-                <div class="about-card"><h3>🌐 Languages</h3><p>English (Fluent) • German (Learning) • Telugu (Native)</p></div>
+        </section>
+
+        <section id="writing" class="section" aria-labelledby="writing-title">
+            <div class="container">
+                <header class="section-header reveal">
+                    <span class="eyebrow">07</span>
+                    <h2 id="writing-title" class="section-title">Writing</h2>
+                </header>
+                <div class="card-grid writing-grid reveal">
+                    <a href="https://medium.com/@korinetharunkumarpalli/from-rnns-to-attention-bahdanau-attention-explained-9314b151d24e" target="_blank" rel="noopener noreferrer" class="card writing-card glass">
+                        <div class="card-head">
+                            <h3>From RNNs to Attention: Bahdanau Attention Explained</h3>
+                            <span class="card-arrow" aria-hidden="true"><svg class="icon"><use href="#i-arrow"/></svg></span>
+                        </div>
+                        <p class="card-meta">Medium</p>
+                    </a>
+                    <a href="https://medium.com/@korinetharunkumarpalli/optimizing-deep-learning-models-for-fast-inference-on-edge-devices-1c0e853ddf21" target="_blank" rel="noopener noreferrer" class="card writing-card glass">
+                        <div class="card-head">
+                            <h3>Optimizing Deep Learning for Edge Inference</h3>
+                            <span class="card-arrow" aria-hidden="true"><svg class="icon"><use href="#i-arrow"/></svg></span>
+                        </div>
+                        <p class="card-meta">Medium</p>
+                    </a>
+                    <a href="https://medium.com/@korinetharunkumarpalli/nvidia-tao-toolkit-27dfcc2b4e8a" target="_blank" rel="noopener noreferrer" class="card writing-card glass">
+                        <div class="card-head">
+                            <h3>A Complete Guide to NVIDIA TAO Toolkit</h3>
+                            <span class="card-arrow" aria-hidden="true"><svg class="icon"><use href="#i-arrow"/></svg></span>
+                        </div>
+                        <p class="card-meta">Medium</p>
+                    </a>
+                    <a href="https://medium.com/@korinetharunkumarpalli/xlstm-reinventing-recurrent-networks-for-the-era-of-large-language-models-e2243b774dc5" target="_blank" rel="noopener noreferrer" class="card writing-card glass">
+                        <div class="card-head">
+                            <h3>xLSTM: Reinventing Recurrent Networks</h3>
+                            <span class="card-arrow" aria-hidden="true"><svg class="icon"><use href="#i-arrow"/></svg></span>
+                        </div>
+                        <p class="card-meta">Medium</p>
+                    </a>
+                </div>
             </div>
-        </div>
-    </section>
-    <section id="moments" class="moments-section">
-        <div class="section-header"><span class="section-number">02</span><h2 class="section-title">Moments</h2></div>
-        <div class="moments-grid">
-            <div class="moment-card"><img src="images/graduation-group.jpg" alt="Graduation with classmates"><div class="moment-overlay"><h3>M.Sc. Graduation Day</h3><p>With fellow AI graduates at THWS</p><span class="moment-tag">2025</span></div></div>
-            <div class="moment-card"><img src="images/graduation-thws.jpg" alt="THWS Certificate"><div class="moment-overlay"><h3>Master's Certificate</h3><p>THWS Würzburg, Germany</p><span class="moment-tag">THWS</span></div></div>
-            <div class="moment-card"><img src="images/gold-medal.jpg" alt="Gold Medal at GPREC"><div class="moment-overlay"><h3>Gold Medal</h3><p>G. Pulla Reddy Engineering College</p><span class="moment-tag">2021</span></div></div>
-        </div>
-    </section>
-    <section id="now">
-        <div class="section-header"><span class="section-number">03</span><h2 class="section-title">What I'm doing now</h2></div>
-        <div class="now-content">
-            <div class="now-role"><div class="now-role-dot"></div><span>AI Researcher</span></div>
-            <h3 class="now-company">@ <a href="https://ttz-kt.thws.de/" target="_blank">TTZ Kitzingen</a></h3>
-            <p class="now-description">I'm part of the research team at the Technology Transfer Center Kitzingen (TTZ-KT), an initiative of THWS focused on bringing AI, robotics, and digital transformation to regional industry. We work closely with local companies to solve real engineering challenges using cutting-edge AI.</p>
-            <p class="now-description">My current focus includes developing LLM-powered solutions, building RAG systems for industrial applications, computer vision for quality control, and exploring how we can deploy these systems efficiently on edge hardware.</p>
-            <div class="now-focus">
-                <span class="focus-item">Large Language Models</span>
-                <span class="focus-item">RAG Systems</span>
-                <span class="focus-item">Computer Vision</span>
-                <span class="focus-item">Edge AI</span>
-                <span class="focus-item">Robotics Integration</span>
-                <span class="focus-item">Industrial AI</span>
+        </section>
+
+        <section id="contact" class="section" aria-labelledby="contact-title">
+            <div class="container">
+                <div class="contact-panel glass reveal">
+                    <h2 id="contact-title">Let's connect</h2>
+                    <p class="lead">I'm always interested in hearing about new collaborations, interesting projects, or just chatting about AI.</p>
+                    <div class="contact-links">
+                        <a href="https://www.linkedin.com/in/tharun-kumar-korine-palli/" target="_blank" rel="noopener noreferrer" class="btn btn-glass glass">
+                            <svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg>LinkedIn
+                        </a>
+                        <a href="https://github.com/tharun-kumar-korinepalli" target="_blank" rel="noopener noreferrer" class="btn btn-glass glass">
+                            <svg class="icon" aria-hidden="true"><use href="#i-github"/></svg>GitHub
+                        </a>
+                        <a href="tel:+491639674688" class="btn btn-glass glass">
+                            <svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>+49 163 967 4688
+                        </a>
+                    </div>
+                    <a href="mailto:korinetharunkumarpalli@gmail.com" class="contact-email">korinetharunkumarpalli@gmail.com <span aria-hidden="true">→</span></a>
+                </div>
             </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <p>© 2026 Tharun Kumar Korine Palli</p>
+            <ul class="footer-links">
+                <li><a href="https://www.linkedin.com/in/tharun-kumar-korine-palli/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                <li><a href="https://github.com/tharun-kumar-korinepalli" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+                <li><a href="https://medium.com/@korinetharunkumarpalli" target="_blank" rel="noopener noreferrer">Medium</a></li>
+            </ul>
         </div>
-    </section>
-    <section id="work">
-        <div class="section-header"><span class="section-number">04</span><h2 class="section-title">Selected Work</h2></div>
-        <div class="work-grid">
-            <a href="https://github.com/tharun-kumar-22" target="_blank" class="work-item"><div><h3>Real-time Detection Systems</h3><p>Developed and deployed object detection models for industrial quality control, optimized for edge devices with TensorRT acceleration.</p><div class="work-tags"><span class="work-tag">NVIDIA TAO</span><span class="work-tag">Jetson</span><span class="work-tag">TensorRT</span></div></div><span class="work-arrow">↗</span></a>
-            <a href="https://github.com/tharun-kumar-22/camera_based_person_detection" target="_blank" class="work-item"><div><h3>Multi-Camera Tracking</h3><p>Built a system for person detection and re-identification across multiple camera feeds with consistent tracking.</p><div class="work-tags"><span class="work-tag">YOLOv8</span><span class="work-tag">ReID</span><span class="work-tag">OpenCV</span></div></div><span class="work-arrow">↗</span></a>
-            <a href="https://github.com/tharun-kumar-22/Future-Pose-Predictive-Modeling-of-Human-Motion-Dynamics-using-Skeleton-Data" target="_blank" class="work-item"><div><h3>Motion Prediction</h3><p>Predictive modeling of human motion dynamics using sequence models, achieving strong accuracy on pose forecasting tasks.</p><div class="work-tags"><span class="work-tag">GRU</span><span class="work-tag">Sequence Modeling</span><span class="work-tag">PyTorch</span></div></div><span class="work-arrow">↗</span></a>
-            <a href="https://github.com/tharun-kumar-22/Artificial-Neural-Networks---Suduko-Solver" target="_blank" class="work-item"><div><h3>Neural Problem Solving</h3><p>Exploring how neural networks can learn to solve combinatorial puzzles — experimenting with different architectures.</p><div class="work-tags"><span class="work-tag">CNN</span><span class="work-tag">Transformers</span><span class="work-tag">Deep Learning</span></div></div><span class="work-arrow">↗</span></a>
-        </div>
-    </section>
-    <section id="education">
-        <div class="section-header"><span class="section-number">05</span><h2 class="section-title">Education</h2></div>
-        <div class="edu-timeline">
-            <div class="edu-item"><div class="edu-year">2023 — 2025</div><div class="edu-degree">M.Sc. Artificial Intelligence</div><div class="edu-school">Technische Hochschule Würzburg-Schweinfurt, Germany</div></div>
-            <div class="edu-item"><div class="edu-year">2018 — 2021</div><div class="edu-degree">B.Tech Mechanical Engineering + CS Minor</div><div class="edu-school">G. Pulla Reddy Engineering College, India • Gold Medalist</div></div>
-            <div class="edu-item"><div class="edu-year">2015 — 2018</div><div class="edu-degree">Diploma in Mechanical Engineering</div><div class="edu-school">Govt. Polytechnic, Anantapur, India</div></div>
-        </div>
-    </section>
-    <section id="skills">
-        <div class="section-header"><span class="section-number">06</span><h2 class="section-title">Skills & Tools</h2></div>
-        <div class="skills-container">
-            <div class="skill-group"><h3>AI & ML</h3><div class="skill-list"><span class="skill-item">Deep Learning</span><span class="skill-item">LLMs</span><span class="skill-item">RAG</span><span class="skill-item">Computer Vision</span><span class="skill-item">NLP</span></div></div>
-            <div class="skill-group"><h3>Frameworks</h3><div class="skill-list"><span class="skill-item">PyTorch</span><span class="skill-item">TensorFlow</span><span class="skill-item">Hugging Face</span><span class="skill-item">LangChain</span><span class="skill-item">OpenCV</span></div></div>
-            <div class="skill-group"><h3>Edge & Deployment</h3><div class="skill-list"><span class="skill-item">NVIDIA TAO</span><span class="skill-item">TensorRT</span><span class="skill-item">Jetson</span><span class="skill-item">Docker</span></div></div>
-            <div class="skill-group"><h3>Development</h3><div class="skill-list"><span class="skill-item">Python</span><span class="skill-item">Git</span><span class="skill-item">Linux</span><span class="skill-item">FastAPI</span></div></div>
-        </div>
-    </section>
-    <section id="writing">
-        <div class="section-header"><span class="section-number">07</span><h2 class="section-title">Writing</h2></div>
-        <div class="writing-grid">
-            <a href="https://medium.com/@korinetharunkumarpalli/from-rnns-to-attention-bahdanau-attention-explained-9314b151d24e" target="_blank" class="writing-card"><h3>From RNNs to Attention: Bahdanau Attention Explained</h3><p>Medium</p></a>
-            <a href="https://medium.com/@korinetharunkumarpalli/optimizing-deep-learning-models-for-fast-inference-on-edge-devices-1c0e853ddf21" target="_blank" class="writing-card"><h3>Optimizing Deep Learning for Edge Inference</h3><p>Medium</p></a>
-            <a href="https://medium.com/@korinetharunkumarpalli/nvidia-tao-toolkit-27dfcc2b4e8a" target="_blank" class="writing-card"><h3>A Complete Guide to NVIDIA TAO Toolkit</h3><p>Medium</p></a>
-            <a href="https://medium.com/@korinetharunkumarpalli/xlstm-reinventing-recurrent-networks-for-the-era-of-large-language-models-e2243b774dc5" target="_blank" class="writing-card"><h3>xLSTM: Reinventing Recurrent Networks</h3><p>Medium</p></a>
-        </div>
-    </section>
-    <section id="contact" class="contact-section">
-        <h2>Let's connect</h2>
-        <p>I'm always interested in hearing about new collaborations, interesting projects, or just chatting about AI.</p>
-        <div class="contact-links">
-            <a href="https://www.linkedin.com/in/tharun-kumar-korine-palli/" target="_blank" class="contact-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>LinkedIn</a>
-            <a href="https://github.com/tharun-kumar-22" target="_blank" class="contact-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>GitHub</a>
-            <a href="tel:+491639674688" class="contact-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>+49 163 967 4688</a>
-        </div>
-        <a href="mailto:korinetharunkumarpalli@gmail.com" class="contact-email">korinetharunkumarpalli@gmail.com →</a>
-    </section>
-    <footer><p>© 2026 Tharun Kumar Korine Palli</p><div class="social-links"><a href="https://www.linkedin.com/in/tharun-kumar-korine-palli/" target="_blank">LinkedIn</a><a href="https://github.com/tharun-kumar-22" target="_blank">GitHub</a><a href="https://medium.com/@korinetharunkumarpalli" target="_blank">Medium</a></div></footer>
+    </footer>
+
     <script>
-        const cursorGlow = document.getElementById('cursorGlow');
-        document.addEventListener('mousemove', (e) => { cursorGlow.style.left = e.clientX + 'px'; cursorGlow.style.top = e.clientY + 'px'; });
-        const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 50); });
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) { e.preventDefault(); const target = document.querySelector(this.getAttribute('href')); if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' }); });
-        });
-        const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.style.opacity = '1'; entry.target.style.transform = 'translateY(0)'; } }); }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-        document.querySelectorAll('section').forEach(section => { section.style.opacity = '0'; section.style.transform = 'translateY(30px)'; section.style.transition = 'opacity 0.8s ease, transform 0.8s ease'; observer.observe(section); });
-        document.querySelector('.hero').style.opacity = '1'; document.querySelector('.hero').style.transform = 'translateY(0)';
+        (function () {
+            'use strict';
+
+            // Mobile menu
+            var toggle = document.querySelector('.nav-toggle');
+            var menu = document.getElementById('nav-menu');
+
+            function setMenu(open) {
+                if (!toggle || !menu) return;
+                toggle.setAttribute('aria-expanded', String(open));
+                menu.hidden = !open;
+            }
+
+            if (toggle && menu) {
+                toggle.addEventListener('click', function () {
+                    setMenu(toggle.getAttribute('aria-expanded') !== 'true');
+                });
+                menu.addEventListener('click', function (e) {
+                    if (e.target.closest('a')) setMenu(false);
+                });
+                document.addEventListener('keydown', function (e) {
+                    if (e.key === 'Escape' && !menu.hidden) {
+                        setMenu(false);
+                        toggle.focus();
+                    }
+                });
+                document.addEventListener('click', function (e) {
+                    if (!menu.hidden && !e.target.closest('.nav-bar')) setMenu(false);
+                });
+                var desktop = window.matchMedia('(min-width: 961px)');
+                var onDesktop = function (mq) { if (mq.matches) setMenu(false); };
+                if (desktop.addEventListener) desktop.addEventListener('change', onDesktop);
+                else if (desktop.addListener) desktop.addListener(onDesktop);
+            }
+
+            if (!('IntersectionObserver' in window)) {
+                document.documentElement.classList.remove('js');
+                return;
+            }
+
+            // Highlight the nav link for the section in view
+            var navLinks = document.querySelectorAll('.nav-links a, .nav-menu a[href^="#"]');
+            var sections = document.querySelectorAll('main section[id]');
+            var spy = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (!entry.isIntersecting) return;
+                    var id = '#' + entry.target.id;
+                    navLinks.forEach(function (link) {
+                        if (link.getAttribute('href') === id) link.setAttribute('aria-current', 'true');
+                        else link.removeAttribute('aria-current');
+                    });
+                });
+            }, { rootMargin: '-45% 0px -50% 0px' });
+            sections.forEach(function (s) { spy.observe(s); });
+
+            // Gentle reveal on scroll
+            var reveal = new IntersectionObserver(function (entries, obs) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        obs.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+            document.querySelectorAll('.reveal').forEach(function (el) { reveal.observe(el); });
+        })();
     </script>
 </body>
 </html>
